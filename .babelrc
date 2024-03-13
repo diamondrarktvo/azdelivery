@@ -1,0 +1,26 @@
+{
+  "presets": ["babel-preset-expo"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./app"],
+        "alias": [
+          { "_assets": "./app/assets" },
+          { "_features": "./app/features" },
+          { "_i18n": "./app/i18n" },
+          { "_navigation": "./app/navigation" },
+          { "_services": "./app/service" },
+          { "_shared": "./app/shared" },
+          { "_hooks": "./app/hooks" },
+          { "_store": "./app/store" },
+          { "_theme": "./app/theme" },
+          { "_utils": "./app/utils" },
+          { "_config": "./app/config" }
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "react-native-reanimated/plugin"
+  ]
+}
