@@ -2,6 +2,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { useEffect, useState } from "react";
+
 //LOCAL IMPORT
 import { stackNavigationConfig } from "./configStack";
 import { StackParamList } from "./types";
@@ -10,6 +11,7 @@ import { StackParamList } from "./types";
 import TabNavigation from "./Tabs";
 import { useAppDispatch, useAppSelector } from "_store";
 import { ForgotPasswordScreen, LoginScreen, RegisterScreen } from "_features";
+import { selectors as authSelectors } from "../features/auth/authSlice";
 
 //IMPORT SCREEN
 
@@ -17,7 +19,7 @@ const Stack = createStackNavigator<StackParamList>();
 
 const StackNavigation = () => {
   const dispatch = useAppDispatch();
-  const [isUserLogged, setIsUserLogged] = useState(false);
+  const isUserLogged = useAppSelector(authSelectors.isUserLogged);
 
   return (
     <NavigationContainer>

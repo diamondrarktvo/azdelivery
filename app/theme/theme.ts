@@ -64,7 +64,7 @@ const theme = createTheme({
     xxs: 4,
     xs: 8,
     sm: 16,
-    md: 24,
+    md: 45,
     lg: 64,
     hg: 128,
   },

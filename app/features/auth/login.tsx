@@ -6,6 +6,7 @@ import {
   Image,
   Input,
   MainScreen,
+  Row,
   Text,
   TouchableOpacity,
 } from "_shared";
@@ -27,51 +28,63 @@ export function LoginScreen() {
   };
 
   return (
-    <MainScreen typeOfScreen="stack">
-      <Box flexDirection={"row"} justifyContent={"center"} my="l">
-        <Image
-          source={require("_assets/images/logo.png")}
-          style={{ width: 248, height: 200 }}
-        />
+    <Box flex={1}>
+      <Box flex={1}>
+        <Box
+          flex={1}
+          backgroundColor={"primary"}
+          borderBottomRightRadius={"md"}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <Image
+            source={require("_assets/images/logo.png")}
+            style={{ width: 248, height: 200 }}
+          />
+          <Text variant={"bigTitle"} color={"offWhite"}>
+            Bienvenue!
+          </Text>
+        </Box>
       </Box>
-      <Box mt="s">
-        <Input label="Adresse email" placeholder="Adresse email" />
-        <Input
-          label="Mot de passe"
-          placeholder="Mot de passe"
-          iconRight={{
-            name: hidePassword ? "visibility" : "visibility-off",
-            size: 32,
-            color: secondary,
-            onPress: () => setHidePassword(!hidePassword),
-          }}
-        />
+      <Box flex={1} backgroundColor={"primary"}>
+        <Box flex={1} backgroundColor={"white"} borderTopLeftRadius={"md"}>
+          <Box marginTop={"s"} marginHorizontal={"m"}>
+            <Input label="Numéro télephone" placeholder="0343948483" />
+            <Input label="Mot de passe" placeholder="* * * *" />
+            <TouchableOpacity
+              flexDirection="row"
+              justifyContent={"flex-end"}
+              onPress={() => navigation.navigate("forgot_password_screen")}
+            >
+              <Text variant="primary" color={"primary"} fontWeight={"bold"}>
+                Mot de passe oublié?
+              </Text>
+            </TouchableOpacity>
+            <Button
+              variant="primary"
+              bold={"bold"}
+              marginVertical={"m"}
+              label="Se connecter"
+              onPress={() => handleLogin()}
+            />
+            <Row justifyContent="center">
+              <Text variant={"secondary"} color={"black"}>
+                {" "}
+                Pas de compte?{" "}
+              </Text>
+              <TouchableOpacity>
+                <Text
+                  variant={"secondary"}
+                  color={"primary"}
+                  fontWeight={"bold"}
+                >
+                  S'enregistrer
+                </Text>
+              </TouchableOpacity>
+            </Row>
+          </Box>
+        </Box>
       </Box>
-      <TouchableOpacity
-        flexDirection="row"
-        justifyContent={"flex-end"}
-        onPress={() => navigation.navigate("forgot_password_screen")}
-      >
-        <Text variant="primary" color={"primary"} fontWeight={"bold"}>
-          Mot de passe oublié
-        </Text>
-      </TouchableOpacity>
-      <Button
-        variant="primary"
-        bold={"bold"}
-        marginVertical={"m"}
-        label="Se connecter"
-        onPress={() => handleLogin()}
-      />
-      <TouchableOpacity
-        flexDirection="row"
-        justifyContent={"flex-end"}
-        onPress={() => navigation.navigate("register_screen")}
-      >
-        <Text variant="primary" color={"primary"}>
-          S'enregistrer
-        </Text>
-      </TouchableOpacity>
-    </MainScreen>
+    </Box>
   );
 }

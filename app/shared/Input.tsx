@@ -37,19 +37,19 @@ const Input = ({
   const { spacing, colors } = theme;
 
   return (
-    <Box my="xxs">
+    <Box my="s">
       {label ? (
         <Text variant={"secondary"} color="black">
           {label}
         </Text>
       ) : null}
       <Row
-        borderWidth={1}
+        borderBottomWidth={1}
         borderColor="secondary"
         borderRadius="xs"
         width="100%"
         paddingHorizontal={iconLeft ? "xs" : "s"}
-        paddingVertical="s"
+        paddingVertical="xs"
         marginVertical="xs"
         alignItems="center"
       >
