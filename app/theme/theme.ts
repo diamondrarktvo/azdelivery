@@ -4,15 +4,15 @@ import { Typography } from "./typography";
 
 //PALETTE
 const palette = {
-  bluePrimary: "#4E73DF",
+  purplePrimary: "#4E73DF",
   blueDark: "#4E73DF",
+  yellowPrimary: "#DCB705",
 
   redBordeaux: "#FB222D",
 
   white: "#F0F2F3",
   grey: "#939597",
   offWhite: "#DDD",
-  yellow: "#DCB705",
   success: "green",
   black: "#0B0B0B",
   offBlack: "#252525",
@@ -23,19 +23,18 @@ const theme = createTheme({
   colors: {
     mainBackground: palette.white,
     mainForeground: palette.black,
-    primary: palette.bluePrimary,
+    primary: palette.purplePrimary,
     primaryDark: palette.blueDark,
+    primaryYellow: palette.yellowPrimary,
     secondary: palette.grey, //grey
-    blueDark: palette.blueDark,
     error: palette.redBordeaux,
     success: palette.success,
     white: palette.white,
-    yellow: palette.yellow,
     black: palette.black,
     offWhite: palette.offWhite,
     offBlack: palette.offBlack,
-    text: palette.black,
-    textPrimaryColor: palette.bluePrimary,
+    text: palette.blueDark,
+    textPrimaryColor: palette.purplePrimary,
     transparent: palette.transparent,
   },
   spacing: {
@@ -124,7 +123,7 @@ const darkTheme = createTheme({
     ...theme.colors,
     mainBackground: palette.black,
     mainForeground: palette.white,
-    primary: palette.bluePrimary,
+    primary: palette.purplePrimary,
     secondary: palette.black, //grey
     error: palette.redBordeaux,
     white: palette.offWhite,
