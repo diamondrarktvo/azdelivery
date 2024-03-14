@@ -4,9 +4,9 @@ import { Typography } from "./typography";
 
 //PALETTE
 const palette = {
-  purplePrimary: "#4E73DF",
-  blueDark: "#4E73DF",
-  yellowPrimary: "#DCB705",
+  purplePrimary: "#562785",
+  blueDark: "#241D2D",
+  yellowPrimary: "#F5BD20",
 
   redBordeaux: "#FB222D",
 
