@@ -31,6 +31,12 @@ const RequestConnection: React.FC<Props> = ({ children, ...props }) => {
     <>
       {!isConnected || !isUserHasAccessToInternet ? (
         <Box flex={1} justifyContent={"center"} alignItems={"center"}>
+          <AnimatedLottieView
+            source={require("_assets/images/lostconnection.json")}
+            autoPlay
+            loop
+            style={styles.lottieImg}
+          />
           <Text variant={"primary"}>Vous n'êtes pas connecté à internet</Text>
         </Box>
       ) : (

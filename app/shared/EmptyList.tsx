@@ -15,6 +15,12 @@ const EmptyList = ({ textToShow }: Props) => {
       alignItems={"center"}
       justifyContent={"center"}
     >
+      <AnimatedLottieView
+        source={require("_assets/images/empty.json")}
+        autoPlay
+        loop
+        style={styles.lottieImg}
+      />
       <Text variant={"primary"}>{textToShow}</Text>
     </Box>
   );
