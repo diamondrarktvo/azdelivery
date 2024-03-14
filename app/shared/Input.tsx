@@ -39,7 +39,7 @@ const Input = ({
   return (
     <Box my="s">
       {label ? (
-        <Text variant={"secondary"} color="black">
+        <Text variant={"primary"} color="black">
           {label}
         </Text>
       ) : null}
