@@ -49,7 +49,7 @@ const DIMENSIONS = {
 };
 
 const TYPO = {
-  veryBig: 40,
+  veryBig: 28,
   big: 24,
   primary: 16,
   secondary: 14,

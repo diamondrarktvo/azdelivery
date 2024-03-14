@@ -1,7 +1,7 @@
 import { Size } from "./size";
 
 export const Typography = {
-  headerNavigation: {
+  veryBigTitle: {
     fontWeight: "600",
     fontSize: Size.TYPO.veryBig, //40
   },

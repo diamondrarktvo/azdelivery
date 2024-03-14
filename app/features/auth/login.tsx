@@ -49,7 +49,7 @@ export function LoginScreen() {
               source={require("_assets/images/logo_white.png")}
               style={{ width: 180, height: 60 }}
             />
-            <Text variant={"bigTitle"} color={"offWhite"} marginTop={"s"}>
+            <Text variant={"veryBigTitle"} color={"offWhite"} marginTop={"s"}>
               Bienvenue!
             </Text>
           </Box>
@@ -59,7 +59,17 @@ export function LoginScreen() {
         <Box flex={1} backgroundColor={"white"} borderTopLeftRadius={"md"}>
           <Box marginTop={"s"} marginHorizontal={"m"}>
             <Input label="Numéro télephone" placeholder="0343948483" />
-            <Input label="Mot de passe" placeholder="* * * *" />
+            <Input
+              label="Mot de passe"
+              secureTextEntry={hidePassword}
+              placeholder="* * * *"
+              iconRight={{
+                name: hidePassword ? "visibility" : "visibility-off",
+                size: 32,
+                color: secondary,
+                onPress: () => setHidePassword(!hidePassword),
+              }}
+            />
             <TouchableOpacity
               flexDirection="row"
               justifyContent={"flex-end"}
@@ -81,7 +91,9 @@ export function LoginScreen() {
                 {" "}
                 Pas de compte?{" "}
               </Text>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("register_screen")}
+              >
                 <Text
                   variant={"secondary"}
                   color={"primary"}
