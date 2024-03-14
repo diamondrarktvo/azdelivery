@@ -35,7 +35,9 @@ const StackNavigation = () => {
       ) : (
         <Stack.Navigator initialRouteName={"login_screen"}>
           <Stack.Group
-            screenOptions={stackNavigationConfig.screenOptionsForHiddenHeader}
+            screenOptions={
+              stackNavigationConfig.screenOptionsForCustomHiddenHeader
+            }
           >
             <Stack.Screen name={"login_screen"} component={LoginScreen} />
             <Stack.Screen
