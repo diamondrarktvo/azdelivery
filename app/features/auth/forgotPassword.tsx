@@ -22,7 +22,7 @@ export function ForgotPasswordScreen() {
     <MainScreen typeOfScreen="stack">
       <Box flexDirection={"row"} justifyContent={"center"} my="l">
         <Image
-          source={require("_assets/images/logo.png")}
+          source={require("_assets/images/logo_white.png")}
           style={{ width: 248, height: 200 }}
         />
       </Box>

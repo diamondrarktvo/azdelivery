@@ -5,6 +5,8 @@ import { Typography } from "./typography";
 //PALETTE
 const palette = {
   purplePrimary: "#562785",
+  purplePrimaryTransparent: "rgba(86, 39, 133, 0.9)",
+  purpleFromBackgroundImage: "#642b78",
   blueDark: "#241D2D",
   yellowPrimary: "#F5BD20",
 
@@ -24,6 +26,8 @@ const theme = createTheme({
     mainBackground: palette.white,
     mainForeground: palette.black,
     primary: palette.purplePrimary,
+    primaryTransparent: palette.purplePrimaryTransparent,
+    purpleFromBackgroundImage: palette.purpleFromBackgroundImage,
     primaryDark: palette.blueDark,
     primaryYellow: palette.yellowPrimary,
     secondary: palette.grey, //grey

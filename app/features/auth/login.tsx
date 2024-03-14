@@ -14,6 +14,7 @@ import { useAppDispatch } from "_store";
 import { Theme } from "_theme";
 import { useState } from "react";
 import { setIsUserLogged } from "./authSlice";
+import { ImageBackground, StyleSheet } from "react-native";
 
 export function LoginScreen() {
   const [hidePassword, setHidePassword] = useState(true);
@@ -30,23 +31,31 @@ export function LoginScreen() {
   return (
     <Box flex={1}>
       <Box flex={1}>
-        <Box
-          flex={1}
-          backgroundColor={"primary"}
-          borderBottomRightRadius={"md"}
-          justifyContent={"center"}
-          alignItems={"center"}
+        <ImageBackground
+          source={require("_assets/images/livraison_background.jpg")}
+          resizeMode="cover"
+          blurRadius={4}
+          style={styles.backgroundImage}
+          imageStyle={styles.imageStyle}
         >
-          <Image
-            source={require("_assets/images/logo.png")}
-            style={{ width: 248, height: 200 }}
-          />
-          <Text variant={"bigTitle"} color={"offWhite"}>
-            Bienvenue!
-          </Text>
-        </Box>
+          <Box
+            flex={1}
+            backgroundColor={"primaryTransparent"}
+            borderBottomRightRadius={"md"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Image
+              source={require("_assets/images/logo_white.png")}
+              style={{ width: 180, height: 60 }}
+            />
+            <Text variant={"bigTitle"} color={"offWhite"} marginTop={"s"}>
+              Bienvenue!
+            </Text>
+          </Box>
+        </ImageBackground>
       </Box>
-      <Box flex={1} backgroundColor={"primary"}>
+      <Box flex={1} backgroundColor={"purpleFromBackgroundImage"}>
         <Box flex={1} backgroundColor={"white"} borderTopLeftRadius={"md"}>
           <Box marginTop={"s"} marginHorizontal={"m"}>
             <Input label="Numéro télephone" placeholder="0343948483" />
@@ -88,3 +97,13 @@ export function LoginScreen() {
     </Box>
   );
 }
+
+const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  imageStyle: {
+    borderBottomRightRadius: 45,
+  },
+});
