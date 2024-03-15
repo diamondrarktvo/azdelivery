@@ -51,6 +51,5 @@ export const widthPercentageToDP = (widthPercent: number) => {
 // Fonction pour ajuster la taille de la police selon la taille de l'écran
 export const fontScale = (size: number) => {
   const elemWidth = (screenWidth * size) / 100;
-  console.log("lele ;", PixelRatio.roundToNearestPixel(elemWidth));
   return PixelRatio.roundToNearestPixel(elemWidth);
 };
