@@ -1,3 +1,4 @@
+import { fontScale } from "_utils";
 import { Dimensions } from "react-native";
 
 //import {isTablet} from './system';
@@ -49,12 +50,12 @@ const DIMENSIONS = {
 };
 
 const TYPO = {
-  veryBig: 28,
-  big: 24,
-  primary: 16,
-  secondary: 14,
-  tertiary: 12,
-  verySmall: 10,
+  veryBig: fontScale(6),
+  big: fontScale(5),
+  primary: fontScale(4),
+  secondary: fontScale(3.5),
+  tertiary: fontScale(3),
+  verySmall: fontScale(2),
 };
 
 export const Size = {

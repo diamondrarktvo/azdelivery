@@ -47,7 +47,7 @@ export function ForgotPasswordScreen() {
                 }}
               />
             </TouchableOpacity>
-            <Text variant={"veryBigTitle"} color={"offWhite"}>
+            <Text variant={"bigTitle"} color={"offWhite"}>
               Reinitialiser mot de passe
             </Text>
           </Row>

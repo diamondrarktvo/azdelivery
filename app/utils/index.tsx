@@ -1,3 +1,7 @@
+import { Dimensions, PixelRatio } from "react-native";
+
+const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
+
 export const formatDateToString = (inputDate: string | Date) => {
   const options: {} = {
     year: "numeric",
@@ -9,4 +13,44 @@ export const formatDateToString = (inputDate: string | Date) => {
   const date = new Date(inputDate);
   const formattedDate = date.toLocaleDateString("fr-FR", options);
   return formattedDate;
+};
+
+export function formatDate(dateString: string) {
+  const date = new Date(dateString);
+
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+}
+
+export function getFirstCharactere(text: string) {
+  if (text === "" || undefined || null) {
+    return "";
+  }
+  return text.charAt(0).toUpperCase();
+}
+
+export const verifyText = (text: any): boolean => {
+  //pour vérifier si le texte est un chiffre
+  if (/^\d*$/.test(text)) {
+    return true;
+  }
+  return false;
+};
+
+// Fonction pour convertir le pourcentage de la largeur de l'écran en un nombre de pixels
+export const widthPercentageToDP = (widthPercent: number) => {
+  const elemWidth =
+    typeof widthPercent === "number" ? widthPercent : parseFloat(widthPercent);
+
+  return PixelRatio.roundToNearestPixel((screenWidth * elemWidth) / 100);
+};
+
+// Fonction pour ajuster la taille de la police selon la taille de l'écran
+export const fontScale = (size: number) => {
+  const elemWidth = (screenWidth * size) / 100;
+  console.log("lele ;", PixelRatio.roundToNearestPixel(elemWidth));
+  return PixelRatio.roundToNearestPixel(elemWidth);
 };

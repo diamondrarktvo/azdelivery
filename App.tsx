@@ -18,7 +18,7 @@ export default function App() {
         <SafeAreaProvider>
           <GestureHandlerRootView style={{ flex: 1 }}>
             <BottomSheetModalProvider>
-              <StatusBar style="auto" />
+              <StatusBar style="light" />
               <StackNavigation />
             </BottomSheetModalProvider>
           </GestureHandlerRootView>
