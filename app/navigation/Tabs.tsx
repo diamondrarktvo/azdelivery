@@ -8,6 +8,7 @@ import { useTheme } from "@shopify/restyle";
 import { Theme } from "_theme";
 import {
   CommandScreen,
+  HomeScreen,
   LivraisonScreen,
   MapScreen,
   ProfilScreen,
@@ -26,6 +27,12 @@ interface TabRouteTypes {
 //routes
 const TABROUTES: TabRouteTypes[] = [
   {
+    name: "home_screen",
+    component: HomeScreen,
+    tabLabel: "Dashboard",
+    icon: "home",
+  },
+  {
     name: "command_screen",
     component: CommandScreen,
     tabLabel: "Commandes",
@@ -34,14 +41,14 @@ const TABROUTES: TabRouteTypes[] = [
   {
     name: "livraison_screen",
     component: LivraisonScreen,
-    tabLabel: "Livraisons",
+    tabLabel: "En cours",
     icon: "delivery-dining",
   },
   {
-    name: "map_screen",
+    name: "delivered_screen",
     component: MapScreen,
-    tabLabel: "Map",
-    icon: "public",
+    tabLabel: "Livré",
+    icon: "assignment-turned-in",
   },
 
   {
@@ -58,9 +65,10 @@ const TabNavigation = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="command_screen"
+      initialRouteName="home_screen"
       screenOptions={{
         tabBarStyle: {
+          height: 60,
           paddingVertical: 4,
         },
       }}
@@ -76,8 +84,13 @@ const TabNavigation = () => {
             tabBarIcon: ({ focused }) => (
               <Icon
                 name={route.icon}
-                color={primary}
-                size={focused ? 28 : 20}
+                color={focused ? white : primary}
+                size={focused ? 16 : 22}
+                containerStyle={
+                  focused
+                    ? { backgroundColor: primary, padding: 8, borderRadius: 30 }
+                    : {}
+                }
               />
             ),
             tabBarLabel: ({ focused }) => (

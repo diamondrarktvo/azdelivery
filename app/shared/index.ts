@@ -7,7 +7,6 @@ import Image from "./Image";
 import Row from "./Row";
 import Column from "./Column";
 import TouchableOpacity from "./TouchableOpacity";
-import HeaderStackPrincipal from "./HeaderStackPrincipal";
 import HeaderStackNavNormal from "./HeaderStackNavNormal";
 import Input from "./Input";
 import EmptyList from "./EmptyList";
@@ -25,7 +24,6 @@ export {
   Row,
   Column,
   TouchableOpacity,
-  HeaderStackPrincipal,
   HeaderStackNavNormal,
   Input,
   EmptyList,

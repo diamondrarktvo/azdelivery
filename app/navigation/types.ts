@@ -15,10 +15,11 @@ export type StackParamList = {
 };
 
 export type TabParamList = {
+  home_screen: undefined;
   profil_screen: undefined;
   command_screen: undefined;
   livraison_screen: undefined;
-  map_screen: undefined;
+  delivered_screen: undefined;
 };
 
 // To type the navigation object obtained from useNavigation
