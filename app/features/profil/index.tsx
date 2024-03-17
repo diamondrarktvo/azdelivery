@@ -7,6 +7,8 @@ import { useState } from "react";
 import { HeaderProfil } from "./components/HeaderProfil";
 import { ScrollView } from "react-native-gesture-handler";
 import { Switch } from "react-native-switch";
+import { MenuItem } from "./components/MenuItem";
+import { Alert } from "react-native";
 
 export function ProfilScreen() {
   const theme = useTheme<Theme>();
@@ -108,6 +110,24 @@ export function ProfilScreen() {
                 </Box>
               ))}
             </Row>
+          </Box>
+
+          <Box mt={"m"}>
+            <MenuItem
+              iconLeft={"lock-reset"}
+              label={"Changer mot de passe"}
+              onPress={() => Alert.alert("Menu cliquer")}
+            />
+            <MenuItem
+              iconLeft={"contact-support"}
+              label={"Contacter support"}
+              onPress={() => Alert.alert("Menu cliquer")}
+            />
+            <MenuItem
+              iconLeft={"logout"}
+              label={"Se déconnecter"}
+              onPress={() => Alert.alert("Menu cliquer")}
+            />
           </Box>
         </ScrollView>
       </MainScreen>
