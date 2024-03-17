@@ -1,21 +1,116 @@
 import { useNavigation } from "@react-navigation/native";
 import { useTheme } from "@shopify/restyle";
-import { MainScreen, Text } from "_shared";
+import { Box, Image, MainScreen, Row, Text, Icon } from "_shared";
 import { useAppDispatch } from "_store";
-import { Theme } from "_theme";
+import { Size, Theme } from "_theme";
 import { useState } from "react";
+import { HeaderProfil } from "./components/HeaderProfil";
+import { ScrollView } from "react-native-gesture-handler";
+import { Switch } from "react-native-switch";
 
 export function ProfilScreen() {
   const theme = useTheme<Theme>();
-  const { secondary } = theme.colors;
+  const { secondary, primary, white } = theme.colors;
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
+
+  //data
+  const topMenu = [
+    {
+      id: 1,
+      title: "Dark Mode",
+      icon: "nights-stay",
+      switchValue: true,
+    },
+    {
+      id: 2,
+      title: "Localisation",
+      icon: "location-on",
+      switchValue: true,
+    },
+  ];
 
   //logics
 
   return (
-    <MainScreen typeOfScreen="stack">
-      <Text>Profil screen</Text>
-    </MainScreen>
+    <>
+      <HeaderProfil />
+      <MainScreen typeOfScreen="stack">
+        <Box>
+          <Box
+            flexDirection={"row"}
+            justifyContent={"center"}
+            position={"absolute"}
+            top={"50%"}
+            left={"50%"}
+            style={{ transform: [{ translateX: -50 }, { translateY: -65 }] }}
+            borderWidth={4}
+            borderRadius={"hg"}
+            borderColor={"white"}
+          >
+            <Image
+              source={require("_assets/images/profil_delivery.jpg")}
+              style={{
+                width: 80,
+                height: 80,
+                borderRadius: 60,
+                margin: 5,
+              }}
+            />
+          </Box>
+        </Box>
+        <Box mt={"l"} mb={"s"} flexDirection={"column"} alignItems={"center"}>
+          <Text variant={"bigTitle"} color={"black"}>
+            Dama RKTVO
+          </Text>
+          <Text variant={"bigTitle"} color={"black"}>
+            +261 34 12 345 67
+          </Text>
+        </Box>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Box mt={"s"}>
+            <Row flex={1} height={80}>
+              {topMenu.map((menu) => (
+                <Box
+                  key={menu.id}
+                  backgroundColor={"primaryYellow"}
+                  flex={1}
+                  marginHorizontal={"xs"}
+                  px={"s"}
+                  flexDirection={"column"}
+                  justifyContent={"space-evenly"}
+                  borderRadius={"sm"}
+                >
+                  <Row alignItems={"center"} justifyContent={"space-between"}>
+                    <Icon
+                      name={menu.icon}
+                      size={Size.ICON_MEDIUM}
+                      color={primary}
+                    />
+                    <Switch
+                      value={menu.switchValue}
+                      onValueChange={(val) => console.log(val)}
+                      circleSize={20}
+                      barHeight={20}
+                      circleBorderWidth={1}
+                      backgroundActive={primary}
+                      backgroundInactive={secondary}
+                      circleActiveColor={white}
+                      circleInActiveColor={white}
+                      changeValueImmediately={true}
+                      renderActiveText={false}
+                      renderInActiveText={false}
+                      switchWidthMultiplier={2}
+                      switchBorderRadius={30}
+                    />
+                  </Row>
+                  <Text variant={"bigTitle"}>{menu.title}</Text>
+                </Box>
+              ))}
+            </Row>
+          </Box>
+        </ScrollView>
+      </MainScreen>
+    </>
   );
 }
