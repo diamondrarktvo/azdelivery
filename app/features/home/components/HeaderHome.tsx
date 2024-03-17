@@ -41,14 +41,14 @@ export function HeaderHome() {
         <Text variant={"veryBigTitle"} color={"offWhite"}>
           Dashboard
         </Text>
-        <Icon
-          name="person"
-          color={offWhite}
-          size={Size.ICON_MEDIUM}
+        <TouchableOpacity
+          activeOpacity={0.5}
           onPress={() =>
             navigation.navigate("main_tab", { screen: "profil_screen" })
           }
-        />
+        >
+          <Icon name="person" color={offWhite} size={Size.ICON_MEDIUM} />
+        </TouchableOpacity>
       </Row>
       <Box my={"l"}>
         <Row
