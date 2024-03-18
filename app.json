@@ -21,7 +21,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.azdelivery.azdelivery"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +37,12 @@
           "photosPermission": "AZ delivery accesses your photos to let you share them with your friends."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8c0456d1-b196-4553-bc70-e6d9349293c6"
+      }
+    },
+    "owner": "azdelivery"
   }
 }
