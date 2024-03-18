@@ -10,7 +10,12 @@ import { StackParamList } from "./types";
 //IMPORT NAVIGATION TAB
 import TabNavigation from "./Tabs";
 import { useAppDispatch, useAppSelector } from "_store";
-import { ForgotPasswordScreen, LoginScreen, RegisterScreen } from "_features";
+import {
+  ChangePasswordScreen,
+  ForgotPasswordScreen,
+  LoginScreen,
+  RegisterScreen,
+} from "_features";
 import { selectors as authSelectors } from "../features/auth/authSlice";
 
 //IMPORT SCREEN
@@ -29,7 +34,11 @@ const StackNavigation = () => {
             screenOptions={stackNavigationConfig.screenOptionsForHiddenHeader}
           >
             <Stack.Screen name={"main_tab"} component={TabNavigation} />
-            {/**top up screen home*/}
+            {/**profil screen*/}
+            <Stack.Screen
+              name={"change_password_screen"}
+              component={ChangePasswordScreen}
+            />
           </Stack.Group>
         </Stack.Navigator>
       ) : (

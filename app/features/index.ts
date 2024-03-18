@@ -7,4 +7,5 @@ export { LoginScreen } from "./auth/login";
 export { RegisterScreen } from "./auth/register";
 export { ForgotPasswordScreen } from "./auth/forgotPassword";
 
-//components (view) on top up
+//components (view)
+export { ChangePasswordScreen } from "./profil/components/ChangePasswordScreen";

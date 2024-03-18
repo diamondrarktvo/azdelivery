@@ -12,6 +12,8 @@ export type StackParamList = {
   login_screen: undefined;
   register_screen: undefined;
   forgot_password_screen: undefined;
+  //profil
+  change_password_screen: undefined;
 };
 
 export type TabParamList = {

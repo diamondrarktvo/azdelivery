@@ -13,6 +13,7 @@ import {
   specificValueForIos,
   specificValueRelativeToThemeForIos,
 } from "_utils";
+import { setIsUserLogged } from "../auth/authSlice";
 
 export function ProfilScreen() {
   const theme = useTheme<Theme>();
@@ -130,7 +131,7 @@ export function ProfilScreen() {
             <MenuItem
               iconLeft={"lock-reset"}
               label={"Changer mot de passe"}
-              onPress={() => Alert.alert("Menu cliquer")}
+              onPress={() => navigation.navigate("change_password_screen")}
             />
             <MenuItem
               iconLeft={"contact-support"}
@@ -140,7 +141,7 @@ export function ProfilScreen() {
             <MenuItem
               iconLeft={"logout"}
               label={"Se déconnecter"}
-              onPress={() => Alert.alert("Menu cliquer")}
+              onPress={() => dispatch(setIsUserLogged(false))}
             />
           </Box>
         </ScrollView>

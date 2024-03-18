@@ -15,7 +15,7 @@ import { useAppDispatch } from "_store";
 import { Size, Theme } from "_theme";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { Alert, Platform, StyleSheet, ToastAndroid } from "react-native";
-import { fontScalePerHeight, formatDateToString } from "_utils";
+import { scalePerHeight, formatDateToString } from "_utils";
 import {
   BottomSheetBackdrop,
   BottomSheetModal,
@@ -95,7 +95,7 @@ export function HeaderProfil() {
       pt={"m"}
       borderBottomLeftRadius={"md"}
       borderBottomRightRadius={"md"}
-      height={fontScalePerHeight(24)}
+      height={scalePerHeight(24)}
     >
       <Row
         alignItems={"center"}

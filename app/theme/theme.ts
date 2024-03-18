@@ -96,9 +96,9 @@ const theme = createTheme({
       color: "white",
     },
     tertiary: {
-      backgroundColor: "secondary",
-      color: "black",
-      borderColor: "secondary",
+      backgroundColor: "primaryYellow",
+      color: "primaryYellow",
+      borderColor: "primaryYellow",
     },
     outlined: {
       backgroundColor: "transparent",

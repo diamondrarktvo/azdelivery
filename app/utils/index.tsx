@@ -49,14 +49,14 @@ export const widthPercentageToDP = (widthPercent: number) => {
   return PixelRatio.roundToNearestPixel((screenWidth * elemWidth) / 100);
 };
 
-// Fonction pour ajuster la taille de la police selon le width de l'écran
-export const fontScalePerWidth = (size: number) => {
+// Fonction pour ajuster la taille d'un composant selon le width de l'écran
+export const scalePerWidth = (size: number) => {
   const elemWidth = (screenWidth * size) / 100;
   return PixelRatio.roundToNearestPixel(elemWidth);
 };
 
-// Fonction pour ajuster la taille de la police selon la taille de l'écran
-export const fontScalePerHeight = (size: number) => {
+// Fonction pour ajuster la taille d'un composant selon la taille de l'écran
+export const scalePerHeight = (size: number) => {
   const elemWidth = (screenHeight * size) / 100;
   return PixelRatio.roundToNearestPixel(elemWidth);
 };
