@@ -1,6 +1,6 @@
+import { specificValueRelativeToThemeForIos } from "_utils";
 import Box, { BoxProps } from "./Box";
 import React from "react";
-import { Platform } from "react-native";
 
 type Props = {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ const MainScreen: React.FC<Props> = ({
     <Box
       flex={1}
       paddingHorizontal="s"
-      paddingVertical={Platform.OS === "ios" ? "l" : "s"}
+      paddingVertical={specificValueRelativeToThemeForIos("l", "s")}
       backgroundColor="mainBackground"
       {...props}
     >

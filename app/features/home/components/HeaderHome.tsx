@@ -36,7 +36,7 @@ export function HeaderHome() {
         alignItems={"center"}
         justifyContent={"space-between"}
         px={"s"}
-        pt={"m"}
+        pt={"l"}
       >
         <Text variant={"veryBigTitle"} color={"offWhite"}>
           Dashboard

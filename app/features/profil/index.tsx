@@ -9,6 +9,10 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Switch } from "react-native-switch";
 import { MenuItem } from "./components/MenuItem";
 import { Alert } from "react-native";
+import {
+  specificValueForIos,
+  specificValueRelativeToThemeForIos,
+} from "_utils";
 
 export function ProfilScreen() {
   const theme = useTheme<Theme>();
@@ -45,7 +49,12 @@ export function ProfilScreen() {
             position={"absolute"}
             top={"50%"}
             left={"50%"}
-            style={{ transform: [{ translateX: -50 }, { translateY: -65 }] }}
+            style={{
+              transform: [
+                { translateX: -50 },
+                { translateY: specificValueForIos(-112, -65) },
+              ],
+            }}
             borderWidth={4}
             borderRadius={"hg"}
             borderColor={"white"}
@@ -61,7 +70,12 @@ export function ProfilScreen() {
             />
           </Box>
         </Box>
-        <Box mt={"l"} mb={"s"} flexDirection={"column"} alignItems={"center"}>
+        <Box
+          mt={specificValueRelativeToThemeForIos("s", "m")}
+          mb={"s"}
+          flexDirection={"column"}
+          alignItems={"center"}
+        >
           <Text variant={"bigTitle"} color={"black"}>
             Dama RKTVO
           </Text>

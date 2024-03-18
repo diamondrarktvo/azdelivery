@@ -13,6 +13,7 @@ import {
   MapScreen,
   ProfilScreen,
 } from "_features";
+import { specificValueForIos } from "_utils";
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -68,7 +69,7 @@ const TabNavigation = () => {
       initialRouteName="home_screen"
       screenOptions={{
         tabBarStyle: {
-          height: 60,
+          height: specificValueForIos(90, 60),
           paddingVertical: 4,
         },
       }}
