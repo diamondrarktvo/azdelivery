@@ -10,7 +10,7 @@ import {
   CommandScreen,
   HomeScreen,
   LivraisonScreen,
-  MapScreen,
+  DeliveredScreen,
   ProfilScreen,
 } from "_features";
 import { specificValueForIos } from "_utils";
@@ -47,7 +47,7 @@ const TABROUTES: TabRouteTypes[] = [
   },
   {
     name: "delivered_screen",
-    component: MapScreen,
+    component: DeliveredScreen,
     tabLabel: "Livré",
     icon: "assignment-turned-in",
   },

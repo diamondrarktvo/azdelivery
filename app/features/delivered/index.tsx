@@ -5,7 +5,7 @@ import { useAppDispatch } from "_store";
 import { Theme } from "_theme";
 import { useState } from "react";
 
-export function MapScreen() {
+export function DeliveredScreen() {
   const theme = useTheme<Theme>();
   const { secondary } = theme.colors;
   const navigation = useNavigation();

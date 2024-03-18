@@ -26,7 +26,7 @@ const HeaderStackNavNormal: React.FC<Props> = ({
   const navigation = useNavigation();
 
   return (
-    <Box flex={specificValueForIos(1, 0.12)}>
+    <Box flex={specificValueForIos(1, 0.15)}>
       <Box
         flex={1}
         backgroundColor={"primary"}
